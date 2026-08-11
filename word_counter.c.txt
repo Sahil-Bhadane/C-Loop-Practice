@@ -1,0 +1,25 @@
+#include <stdio.h>
+int main()
+{
+char sentence[200];
+int words = 0;
+int inWord = 0;
+printf("Enter a sentence: ");
+fgets(sentence, sizeof(sentence), stdin);
+int i = 0;
+while (sentence[i] != '\0')
+{
+if (sentence[i] == ' ' || sentence[i] == '\n')
+{
+    inWord = 0;
+}
+else if (inWord == 0)
+{
+    words++;
+    inWord = 1;
+}
+    i++;
+}
+printf("There are %d words in the sentence", words);
+return 0;
+}
